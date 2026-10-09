@@ -1,0 +1,94 @@
+/* Site-level layout and additions on top of the demo styles (base.css). */
+:root{color-scheme:light dark}
+html,body{margin:0;min-height:100%;background:light-dark(#f4f4f7,#0d0e10)}
+body{display:flex;justify-content:center;align-items:flex-start;padding:16px;box-sizing:border-box}
+#lm-wrap{width:100%;max-width:480px;padding:0}
+#lm{max-width:480px;height:calc(100dvh - 32px);min-height:560px}
+@media(max-width:520px){
+  body{padding:0}
+  #lm{height:100dvh;border:0;border-radius:0;max-width:none}
+}
+#lm header{padding:12px 16px 6px}
+#lm .brand-handle{font-size:11px;color:var(--muted);margin-left:8px}
+
+/* overview profile block */
+#lm .ov-profile{display:flex;align-items:center;gap:14px;padding:6px 0 10px}
+#lm .ov-avatar{width:58px;height:58px;border-radius:50%;background:var(--soft);border:1px solid var(--line);object-fit:cover;flex-shrink:0;display:grid;place-items:center;font:24px Georgia,serif;overflow:hidden}
+#lm .ov-avatar img{width:100%;height:100%;object-fit:cover}
+#lm .ov-profile .stats{display:flex;justify-content:space-between;flex:1;gap:10px;text-align:center}
+#lm .ov-profile .stats b{display:block;font-size:17px;font-weight:600}
+#lm .ov-profile .stats small{font-size:11px;color:var(--muted)}
+#lm .ov-bio{font-size:12px;margin:0 0 6px;white-space:pre-line}
+#lm .ov-bio span{color:var(--muted)}
+#lm .kpi td:first-child{width:44%}
+#lm .negative{color:light-dark(#a53030,#ffabab)}
+
+/* content month navigation */
+#lm .month-title{align-items:center}
+#lm .month-nav{display:flex;align-items:center;gap:2px}
+#lm .month-nav button{min-height:34px;min-width:34px;display:grid;place-items:center}
+#lm .month-nav svg{width:17px;height:17px}
+
+/* several posts on one day */
+#lm .day-content .brick + .brick{margin-top:0}
+#lm .counts{grid-template-columns:repeat(2,minmax(0,1fr))}
+#lm .brick{cursor:default}
+#lm .brick h3 button{all:unset;cursor:pointer}
+#lm .brick h3 button:hover{color:var(--accent)}
+#lm .brick .fmt{font-size:9px;color:var(--muted);display:block;margin-bottom:2px}
+#lm .feed-title{cursor:pointer}
+#lm .feed-title:hover{color:var(--accent)}
+#lm .feed-title small{display:block;color:var(--muted);font-size:9px}
+
+/* thumbs with real covers */
+#lm .thumb{overflow:hidden;border-radius:3px}
+#lm .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* loading / errors */
+#lm .loading{padding:40px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+#lm .spinner{width:34px;height:34px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--accent);animation:lm-spin 0.9s linear infinite}
+@keyframes lm-spin{to{transform:rotate(360deg)}}
+#lm .loading h1{font-size:19px;margin:6px 0 0}
+#lm .loading p{color:var(--muted);font-size:12px;margin:0;max-width:300px;line-height:1.5}
+#lm .loading .auth-primary{max-width:260px}
+#lm .err-box{background:light-dark(#fbeeee,#3a2224);color:light-dark(#8b2a2a,#ffc0c0);border-radius:8px;padding:10px 12px;font-size:12px;line-height:1.45;margin:8px 0}
+#lm .banner{font-size:11px;padding:7px 12px;background:var(--soft);color:var(--muted);display:flex;align-items:center;gap:8px;justify-content:space-between}
+#lm .banner button{min-height:28px;color:var(--accent);font-size:11px}
+#lm .toast{position:absolute;left:50%;bottom:92px;transform:translateX(-50%);background:var(--ink);color:var(--paper);font-size:12px;padding:8px 12px;border-radius:8px;z-index:60;max-width:85%;text-align:center}
+#lm .sync-btn{display:flex;align-items:center;justify-content:space-between;width:100%;border-bottom:1px solid var(--line);font-size:12px;color:var(--accent)}
+#lm .sync-btn svg{width:16px;height:16px}
+#lm .comments-list{margin:6px 0 0;padding:0;list-style:none}
+#lm .comments-list li{font-size:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+#lm .comments-list b{font-weight:600;margin-right:4px}
+#lm .ig-link{display:inline-flex;align-items:center;gap:5px;color:var(--accent);font-size:12px;text-decoration:none;margin-top:10px}
+#lm .ig-link svg{width:14px;height:14px}
+#lm .media-frame .media-gone{padding:30px 16px;text-align:center;color:var(--muted);font-size:12px}
+#lm .top-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#lm .top-head select{max-width:150px}
+#lm dialog{position:fixed}
+#lm .loading .auth-primary{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:11px;border-radius:9px;background:var(--accent);color:var(--paper);font-size:13px;font-weight:500}
+#lm .loading .auth-primary svg{width:16px;height:16px}
+#lm .loading .auth-link{font-size:12px;color:var(--accent)}
+@media(max-width:520px){
+  #lm>header{padding-top:max(12px,env(safe-area-inset-top))}
+  #lm>nav{padding-bottom:max(22px,env(safe-area-inset-bottom))}
+}
+#lm .install-tip{font-size:11px;color:var(--muted);line-height:1.5}
+#lm .client-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+#lm .client-row .account-initial{overflow:hidden;background:var(--soft)}
+#lm .client-row .account-initial img{width:100%;height:100%;object-fit:cover}
+#lm .client-text{flex:1;min-width:0;font-size:13px;overflow-wrap:anywhere}
+#lm .client-text small{display:block;color:var(--muted);font-size:11px}
+#lm .mini-btn{min-height:34px;padding:0 10px;border-radius:7px;background:var(--soft);font-size:12px;color:var(--accent)}
+#lm .mini-btn.icon-only{padding:0;width:34px;display:grid;place-items:center;color:var(--muted)}
+#lm .mini-btn svg{width:15px;height:15px}
+#lm .mini-btn.danger{background:light-dark(#fbeeee,#3a2224);color:light-dark(#a53030,#ffabab)}
+#lm .invite-form{display:flex;gap:8px;align-items:center}
+#lm .invite-form .edit{margin:0;flex:1;min-width:0}
+#lm .invite-link{background:var(--soft);border-radius:8px;padding:10px;margin:8px 0;display:flex;flex-direction:column;gap:6px}
+#lm .invite-link code{font-size:11px;overflow-wrap:anywhere;color:var(--ink)}
+#lm .invite-link button{display:flex;align-items:center;gap:6px;min-height:36px}
+#lm .invite-link svg{width:15px;height:15px}
+#lm .auth-shell #lm-clients h2{font-size:14px;margin:18px 0 6px}
+@media(pointer:coarse){#lm .mini-btn{min-height:44px}#lm .mini-btn.icon-only{width:44px}}
+#lm{--s8:light-dark(#5b6b8a,#a9b8d8);--s9:light-dark(#9a3fb0,#e3a3f2)}

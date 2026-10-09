@@ -1,0 +1,6 @@
+node_modules
+data
+.env
+*.zip
+railway/dist/
+.DS_Store

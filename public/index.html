@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161719" media="(prefers-color-scheme: dark)">
+<title>Content Lens</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236353d5'/%3E%3Cpath d='M9 22V14M16 22V9M23 22v-5' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Content Lens">
+<link rel="stylesheet" href="/base.css">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div id="lm-wrap">
+  <div id="lm" data-page="auth">
+    <header>
+      <div><span class="brand">content lens</span><span class="brand-handle" id="lm-handle"></span></div>
+      <button class="cursor-interaction" data-page="more" aria-label="Настройки"><i data-lucide="settings-2"></i></button>
+    </header>
+    <main id="lm-screen"></main>
+    <nav aria-label="Основная навигация"></nav>
+  </div>
+</div>
+<script src="/vendor/lucide.min.js"></script>
+<script src="/vendor/d3.min.js"></script>
+<script src="/app.js"></script>
+<script>if ('serviceWorker' in navigator) addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));</script>
+</body>
+</html>
